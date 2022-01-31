@@ -1,12 +1,12 @@
 
 ## spring-ssl
 
-![spring-ssl](spring-ssl.png?id=1")  
+![spring-ssl](spring-ssl-01.png?id=v1")  
 
 ## spring-ssl-server
 Make Spring application work on SSL/HTTPS.
 
-
+![spring-ssl](spring-ssl-02.png?id=v1")  
 
 [Oracle keytool reference](https://docs.oracle.com/en/java/javase/13/docs/specs/man/keytool.html)  
 
@@ -15,7 +15,7 @@ Make Spring application work on SSL/HTTPS.
 > cd JAVA_HOME/bin/  
 > **keytool -genkeypair -alias viki3d -keyalg RSA -keysize 2048 -validity 3650 -keystore viki3d.p12 -storepass 123456 -storetype PKCS12**  
 
-The file: **viki3d.jks** is generated.  
+The file: **viki3d.p12** is generated.  
 
 | Command | Description |  
 | ------- | ----------- |
@@ -103,3 +103,4 @@ This prevents client browser to complain about unknown/untrusted certificate.
 ## spring-ssl-client
 Consume REST service from HTTPS.
 
+![spring-ssl](spring-ssl-03-keystore-vs-truststore.png?id=v1")  
