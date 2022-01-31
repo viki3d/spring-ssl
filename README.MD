@@ -38,7 +38,7 @@ One entry = one keypair = public key + private key.
 > 
 > Your keystore contains 1 entry  
 > 
-> viki3d, Oct 15, 2000, PrivateKeyEntry,
+> viki3d, Oct 15, 2000, `PrivateKeyEntry`,
 Certificate fingerprint (SHA-256): 5B:E3:40:10:1F:E3:29:03:15:60:30:F0:2E:A9:1B:FF:C2:83:8C:0E:BD:B5:CF:12:69:0B:D2:AC:5D:54:76:48  
 >  
 
@@ -57,14 +57,13 @@ Private key can not be shown, since it is not accessible via keytool.
 
 The file: **viki3d.cer** is generated (BASE64).  
 
-`
------BEGIN CERTIFICATE-----  
-MIIDczCCAlugAwIBAgIIG/jLknZ3UjgwDQYJKoZIhvcNAQELBQAwaDEQMA4GA1UE  
-BhMHVW5rbm93bjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjEQ  
-MA4GA1UEChMHVW5rbm93bjEQMA4GA1UECxMHVW5rbm93bjEMMAoGA1UEAxMDViBL  
-MB4XDTIyMDEzMTE1NDc0NloXDTMyMDEyOTE1NDc0NlowaDEQMA4GA1UEBhMHVW5r  
------END CERTIFICATE-----  
-`
+`-----BEGIN CERTIFICATE-----`  
+`MIIDczCCAlugAwIBAgIIG/jLknZ3UjgwDQYJKoZIhvcNAQELBQAwaDEQMA4GA1UE`  
+`BhMHVW5rbm93bjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjEQ`  
+`MA4GA1UEChMHVW5rbm93bjEQMA4GA1UECxMHVW5rbm93bjEMMAoGA1UEAxMDViBL`  
+`MB4XDTIyMDEzMTE1NDc0NloXDTMyMDEyOTE1NDc0NlowaDEQMA4GA1UEBhMHVW5r`  
+`-----END CERTIFICATE-----`  
+
 
 > cd JAVA_HOME/bin/  
 > **keytool -export -keystore viki3d.p12 -alias viki3d -rfc -file viki3d.crt**  
@@ -86,7 +85,7 @@ The file: **viki3d-trust.p12** is generated.
 > 
 > Your keystore contains 1 entry  
 > 
-> viki3d, Oct 15, 2000, <u>trustedCertEntry</u>,
+> viki3d, Oct 15, 2000, `trustedCertEntry`,
 Certificate fingerprint (SHA-256): EE:17:8B:D7:E9:F2:34:78:66:77:C6:F0:2E:A9:1B:FF:C2:83:8C:0E:BD:B5:CF:12:69:0B:D2:AC:5D:F3:52:FD  
 >  
 
