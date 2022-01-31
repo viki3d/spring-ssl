@@ -57,6 +57,15 @@ Private key can not be shown, since it is not accessible via keytool.
 
 The file: **viki3d.cer** is generated (BASE64).  
 
+`
+-----BEGIN CERTIFICATE-----  
+MIIDczCCAlugAwIBAgIIG/jLknZ3UjgwDQYJKoZIhvcNAQELBQAwaDEQMA4GA1UE  
+BhMHVW5rbm93bjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjEQ  
+MA4GA1UEChMHVW5rbm93bjEQMA4GA1UECxMHVW5rbm93bjEMMAoGA1UEAxMDViBL  
+MB4XDTIyMDEzMTE1NDc0NloXDTMyMDEyOTE1NDc0NlowaDEQMA4GA1UEBhMHVW5r  
+-----END CERTIFICATE-----  
+`
+
 > cd JAVA_HOME/bin/  
 > **keytool -export -keystore viki3d.p12 -alias viki3d -rfc -file viki3d.crt**  
 
