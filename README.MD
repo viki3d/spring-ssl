@@ -57,19 +57,38 @@ Private key can not be shown, since it is not accessible via keytool.
 
 The file: **viki3d.cer** is generated (BASE64).  
 
+`
+-----BEGIN CERTIFICATE-----  
+MIIDczCCAlugAwIBAgIIG/jLknZ3UjgwDQYJKoZIhvcNAQELBQAwaDEQMA4GA1UE  
+BhMHVW5rbm93bjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjEQ  
+MA4GA1UEChMHVW5rbm93bjEQMA4GA1UECxMHVW5rbm93bjEMMAoGA1UEAxMDViBL  
+MB4XDTIyMDEzMTE1NDc0NloXDTMyMDEyOTE1NDc0NlowaDEQMA4GA1UEBhMHVW5r  
+-----END CERTIFICATE-----  
+`
+
 > cd JAVA_HOME/bin/  
 > **keytool -export -keystore viki3d.p12 -alias viki3d -rfc -file viki3d.crt**  
 
 The file: **viki3d.crt** is generated (ASCII).  
-`-----BEGIN CERTIFICATE-----`  
-`MIIDczCCAlugAwIBAgIIG/jLknZ3UjgwDQYJKoZIhvcNAQELBQAwaDEQMA4GA1UE`  
-`BhMHVW5rbm93bjEQMA4GA1UECBMHVW5rbm93bjEQMA4GA1UEBxMHVW5rbm93bjEQ`  
-`MA4GA1UEChMHVW5rbm93bjEQMA4GA1UECxMHVW5rbm93bjEMMAoGA1UEAxMDViBL`  
-`MB4XDTIyMDEzMTE1NDc0NloXDTMyMDEyOTE1NDc0NlowaDEQMA4GA1UEBhMHVW5r`  
-`-----END CERTIFICATE-----`  
 
 The public key is for the client. Client imports the .cer file into Certification Authority.
 This prevents client browser to complain about unknown/untrusted certificate.  
+
+### Create trusted keystore (from crt/cer)
+> cd JAVA_HOME/bin/  
+> **keytool -importcert -alias viki3d -file viki3d.crt -keystore viki3d-trust.p12 -storepass 123456 -validity 3650 -storetype PKCS12**  
+
+The file: **viki3d-trust.p12** is generated.  
+
+> **$> keytool -list -keystore viki3d-trust.p12 -storepass 123456**  
+> Keystore type: PKCS12
+> Keystore provider: SUN
+> 
+> Your keystore contains 1 entry  
+> 
+> viki3d, Oct 15, 2000, <u>trustedCertEntry</u>,
+Certificate fingerprint (SHA-256): EE:17:8B:D7:E9:F2:34:78:66:77:C6:F0:2E:A9:1B:FF:C2:83:8C:0E:BD:B5:CF:12:69:0B:D2:AC:5D:F3:52:FD  
+>  
 
 **/src/main/resources/application.properties**:  
 > \# Server port  
