@@ -50,14 +50,19 @@ Private key can not be shown, since it is not accessible via keytool.
 ### Option to delete entry from keystore by its alias  
 > keytool -delete -alias viki3d -keystore viki3d.p12 -storepass 123456  
 
-### Export the public key (from our entry/alias) into a .crt file  
+### Export the public key (from our entry/alias)
 
 > cd JAVA_HOME/bin/  
-> **keytool -export -keystore viki3d.p12 -alias viki3d -file viki3d.crt**  
+> **keytool -export -keystore viki3d.p12 -alias viki3d -file viki3d.cer**  
 
-The file: **viki3d.crt** is generated.  
+The file: **viki3d.cer** is generated (BASE64).  
 
-The public key is for the client. Client imports the .crt file into Certification Authority.
+> cd JAVA_HOME/bin/  
+> **keytool -export -keystore viki3d.p12 -alias viki3d -rfc -file viki3d.crt**  
+
+The file: **viki3d.crt** is generated (ASCII).  
+
+The public key is for the client. Client imports the .cer file into Certification Authority.
 This prevents client browser to complain about unknown/untrusted certificate.  
 
 **/src/main/resources/application.properties**:  
@@ -69,7 +74,7 @@ This prevents client browser to complain about unknown/untrusted certificate.
 > server.ssl.key-store=classpath:viki3d.p12  
 > server.ssl.key-store-password=123456  
 > server.ssl.key-alias=viki3d  
-> \# This will he the HTTP port, where the SpringBoot app will listen  
+> \# This will be the HTTP port, where the SpringBoot app will listen  
 > \# SpringBoot can have only 1 listening port using configuration only.  
 > \# To make this HTTP work as 2nd port - configure it Java code   
 > \# (com.viki3d.spring.server.ssl.logic.config.SSlConfig)  
