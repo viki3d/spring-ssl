@@ -77,9 +77,9 @@ This prevents client browser to complain about unknown/untrusted certificate.
 > cd JAVA_HOME/bin/  
 > **keytool -importcert -alias viki3d -file viki3d.crt -keystore viki3d-trust.p12 -storepass 123456 -validity 3650 -storetype PKCS12**  
 
-The file: **viki3d-trust.p12** is generated.  
+The file: **viki3d-crt-trust.p12** is generated.  
 
-> **$> keytool -list -keystore viki3d-trust.p12 -storepass 123456**  
+> **$> keytool -list -keystore viki3d-crt-trust.p12 -storepass 123456**  
 > Keystore type: PKCS12
 > Keystore provider: SUN
 > 
