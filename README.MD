@@ -20,6 +20,7 @@ The file: **viki3d.p12** is generated.
 | Command | Description |  
 | ------- | ----------- |
 | _-genkeypair_ |  Generates pair of private/public keys  
+| _-genkey_     |  Generates private key  
 | _-alias_      |  The alias of the **key** entry encapsulated in the keystore.  
 | _-keyalg_     |  **Key** algorithm, from [RSA, DSA, EC]
 | _-validity_   |  **Key** validity number of days
